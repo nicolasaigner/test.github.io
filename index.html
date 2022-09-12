@@ -1,3 +1,39 @@
-<div>
-Hello!
-</div>
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script>
+            const lightOn = 'https://toppng.com/uploads/preview/light-bulb-on-off-png-11553939967conkckniqn.png';
+            const lightOff = 'https://toppng.com/uploads/preview/light-bulb-on-off-png-11553940171g57vp25a8k.png'
+            const element = document.getElementById('light');
+            element.setAttribute('data-status', 'on');
+            const button = document.getElementById('btn-toogle');
+
+            function toogleImg() {
+                let status = element.getAttribute('data-status');
+                if (status === 'off') {
+                    element.setAttribute('src', lightOn);
+                } else {
+                    element.setAttribute('src', lightOff);
+                }
+            }
+
+            toogleImg();
+
+        </script>
+        <style>
+        </style>
+    </head>
+
+    <body>
+        <div class="grid">
+            <h1>
+                Hello World!
+            </h1>
+            <img src="">
+
+            <button onclick="toogleImg()">Clique Aqui!</button>
+        </div>
+    </body>
+
+</html>
