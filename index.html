@@ -19,16 +19,17 @@
         <script>
             const lightOn = 'https://toppng.com/uploads/preview/light-bulb-on-off-png-11553939967conkckniqn.png';
             const lightOff = 'https://toppng.com/uploads/preview/light-bulb-on-off-png-11553940171g57vp25a8k.png'
-            const element = document.getElementById('light');
-            element.setAttribute('data-status', 'on');
+            const light = document.getElementById('light');
+            light.setAttribute('data-status', 'on');
+
             const button = document.getElementById('btn-toogle');
 
             function toogleImg() {
-                let status = element.getAttribute('data-status');
+                let status = light.getAttribute('data-status');
                 if (status === 'off') {
-                    element.setAttribute('src', lightOn);
+                    light.setAttribute('src', lightOn);
                 } else {
-                    element.setAttribute('src', lightOff);
+                    light.setAttribute('src', lightOff);
                 }
             }
 
