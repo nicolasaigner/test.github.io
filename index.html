@@ -14,24 +14,28 @@
             <img id="light" src="">
 
             <button id="btn-toogle" onclick="toogleImg()">Clique Aqui!</button>
+
+            <pre id="log"></pre>
         </div>
 
         <script>
             const lightOn = 'https://toppng.com/uploads/preview/light-bulb-on-off-png-11553940171g57vp25a8k.png';
             const lightOff = 'https://toppng.com/uploads/preview/light-bulb-on-off-png-11553939967conkckniqn.png';
-            const light = document.getElementById('light');
-            light.setAttribute('data-status', 'on');
+            const light = document.getElementById("light");
 
-            const button = document.getElementById('btn-toogle');
+            light.setAttribute("data-status", "on");
+            const button = document.getElementById("btn-toogle");
 
             function toogleImg() {
-                console.log('CLICK');
-                let status = light.getAttribute('data-status');
-                console.log('STATUS', status);
-                if (status === 'off') {
-                    light.setAttribute('src', lightOn);
+                console.log("CLICK");
+                let status = light.getAttribute("data-status");
+
+                document.getElementById("log").innerHTML = status;
+                console.log("STATUS", status);
+                if (status === "off") {
+                    light.setAttribute("src", lightOn);
                 } else {
-                    light.setAttribute('src', lightOff);
+                    light.setAttribute("src", lightOff);
                 }
             }
 
