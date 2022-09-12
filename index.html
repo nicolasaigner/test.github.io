@@ -13,7 +13,7 @@
             </h1>
             <img id="light" src="">
 
-            <button id="btn-toogle">Clique Aqui!</button>
+            <button id="btn-toogle" onclick="toogleImg()">Clique Aqui!</button>
         </div>
 
         <script>
@@ -23,10 +23,6 @@
             light.setAttribute('data-status', 'on');
 
             const button = document.getElementById('btn-toogle');
-
-            button.onclick = () => {
-                toogleImg();
-            }
 
             function toogleImg() {
                 console.log('CLICK');
