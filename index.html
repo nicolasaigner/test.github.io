@@ -5,20 +5,16 @@
         <script>
             const lightOn = 'https://toppng.com/uploads/preview/light-bulb-on-off-png-11553940171g57vp25a8k.png';
             const lightOff = 'https://toppng.com/uploads/preview/light-bulb-on-off-png-11553939967conkckniqn.png';
-            const light = document.getElementById("light");
 
-            light.setAttribute("data-status", "on");
-            const button = document.getElementById("btn-toogle");
-
-            function toogleImg() {
+            function toogleImg(lightStatus) {
+                const light = document.getElementById("light");
                 console.log("CLICK");
-                let status = light.getAttribute("data-status");
 
-                document.getElementById("log").innerHTML = status;
-                console.log("STATUS", status);
-                if (status === "off") {
+                document.getElementById("log").innerHTML = lightStatus;
+                console.log("STATUS", lightStatus);
+                if (lightStatus === "off") {
                     light.setAttribute("src", lightOn);
-                } else if (status === "on") {
+                } else if (lightStatus === "on") {
                     light.setAttribute("src", lightOff);
                 }
             }
@@ -28,14 +24,15 @@
         </style>
     </head>
 
-    <body onload="toogleImg()">
+    <body onload="toogleImg('on')">
         <div class="grid">
             <h1>
                 Hello World!
             </h1>
             <img id="light" src="">
 
-            <button id="btn-toogle" onclick="toogleImg()">Clique Aqui!</button>
+            <button id="btn-toogle"
+                onclick="toogleImg(document.getElementById('light').getAttribute('data-status'))">Clique Aqui!</button>
 
             <pre id="log"></pre>
         </div>
