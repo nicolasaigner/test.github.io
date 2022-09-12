@@ -13,7 +13,7 @@
             </h1>
             <img id="light" src="">
 
-            <button id="btn-toogle" onclick="toogleImg()">Clique Aqui!</button>
+            <button id="btn-toogle">Clique Aqui!</button>
         </div>
 
         <script>
@@ -24,8 +24,14 @@
 
             const button = document.getElementById('btn-toogle');
 
+            button.onclick = () => {
+                toogleImg();
+            }
+
             function toogleImg() {
+                console.log('CLICK');
                 let status = light.getAttribute('data-status');
+                console.log('STATUS', status);
                 if (status === 'off') {
                     light.setAttribute('src', lightOn);
                 } else {
