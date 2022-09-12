@@ -2,22 +2,6 @@
 <html>
 
     <head>
-        <style>
-        </style>
-    </head>
-
-    <body>
-        <div class="grid">
-            <h1>
-                Hello World!
-            </h1>
-            <img id="light" src="">
-
-            <button id="btn-toogle" onclick="toogleImg()">Clique Aqui!</button>
-
-            <pre id="log"></pre>
-        </div>
-
         <script>
             const lightOn = 'https://toppng.com/uploads/preview/light-bulb-on-off-png-11553940171g57vp25a8k.png';
             const lightOff = 'https://toppng.com/uploads/preview/light-bulb-on-off-png-11553939967conkckniqn.png';
@@ -34,7 +18,7 @@
                 console.log("STATUS", status);
                 if (status === "off") {
                     light.setAttribute("src", lightOn);
-                } else {
+                } else if (status === "on") {
                     light.setAttribute("src", lightOff);
                 }
             }
@@ -42,6 +26,21 @@
             toogleImg();
 
         </script>
+        <style>
+        </style>
+    </head>
+
+    <body>
+        <div class="grid">
+            <h1>
+                Hello World!
+            </h1>
+            <img id="light" src="">
+
+            <button id="btn-toogle" onclick="toogleImg()">Clique Aqui!</button>
+
+            <pre id="log"></pre>
+        </div>
     </body>
 
 </html>
